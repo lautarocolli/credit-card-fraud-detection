@@ -11,17 +11,18 @@ def load_data():
 
     df.columns = df.columns.str.lower()
     df = df.rename(columns={"class": "fraud"})
-
-    y = df['fraud'].values
-
+    
     del df['time']
-    del df['fraud']
 
-    print('Data has loaded successfully')
-    return df,y
+    print('Data was loaded successfully')
+    return df
 
 
-def train_model(df,y):
+def train_model(df):
+    
+    features = df.drop(columns="fraud").columns.to_list()
+    y = df['fraud'].values
+    
     xgb = XGBClassifier(
         n_estimators = 100,
         learning_rate = 0.05,
@@ -39,9 +40,9 @@ def train_model(df,y):
         n_jobs=-1
     )
 
-    xgb.fit(df,y)
+    xgb.fit(df[features],y)
 
-    print('Model has trained successfully')
+    print('Model was trained successfully')
 
     return xgb
 
@@ -52,8 +53,8 @@ def save_model(filename, model):
     print('Model saved to', filename)
 
 def main():
-    df, y = load_data()
-    model = train_model(df, y)
+    df = load_data()
+    model = train_model(df)
     save_model('model.bin', model)
 
 if __name__ == "__main__":

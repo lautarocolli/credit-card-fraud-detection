@@ -32,6 +32,7 @@ with open('model.bin', 'rb') as f_in:
 
 @app.get("/health", status_code=status.HTTP_200_OK, tags=["System"])
 def get_health():
+
     return {"status": "healthy"}
 
 @app.post(
@@ -41,7 +42,6 @@ def get_health():
     tags=["Predictions"]
 )
 def create_prediction(transaction: Transaction):
-
 
     features = list(transaction.model_dump().values())
     fraud_proba = model.predict_proba([features])[0, 1]
@@ -54,4 +54,4 @@ def create_prediction(transaction: Transaction):
     )
 
 if __name__ == "__main__":
-    uvicorn.run("predict:app", host="0.0.0.0", port=8080, reload=True)
+    uvicorn.run("predict:app", host="0.0.0.0", port=8080)

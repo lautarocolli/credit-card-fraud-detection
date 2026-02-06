@@ -198,35 +198,39 @@ wheels = [
 name = "credit-card-fraud-detection"
 version = "0.1.0"
 source = { virtual = "." }
-dependencies = [
+
+[package.optional-dependencies]
+api = [
+    { name = "fastapi" },
+    { name = "uvicorn", extra = ["standard"] },
+    { name = "xgboost" },
+]
+repo = [
+    { name = "fastapi" },
     { name = "matplotlib" },
     { name = "pandas" },
     { name = "requests" },
     { name = "scikit-learn" },
     { name = "seaborn" },
-    { name = "xgboost" },
-]
-
-[package.optional-dependencies]
-api = [
-    { name = "fastapi" },
-    { name = "scikit-learn" },
     { name = "uvicorn", extra = ["standard"] },
+    { name = "xgboost" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "fastapi", marker = "extra == 'api'" },
-    { name = "matplotlib", specifier = ">=3.10.8" },
-    { name = "pandas", specifier = ">=3.0.0" },
-    { name = "requests", specifier = ">=2.32.5" },
-    { name = "scikit-learn", specifier = ">=1.8.0" },
-    { name = "scikit-learn", marker = "extra == 'api'", specifier = ">=1.8.0" },
-    { name = "seaborn", specifier = ">=0.13.2" },
+    { name = "fastapi", marker = "extra == 'repo'" },
+    { name = "matplotlib", marker = "extra == 'repo'", specifier = ">=3.10.8" },
+    { name = "pandas", marker = "extra == 'repo'", specifier = ">=3.0.0" },
+    { name = "requests", marker = "extra == 'repo'", specifier = ">=2.32.5" },
+    { name = "scikit-learn", marker = "extra == 'repo'", specifier = ">=1.8.0" },
+    { name = "seaborn", marker = "extra == 'repo'", specifier = ">=0.13.2" },
     { name = "uvicorn", extras = ["standard"], marker = "extra == 'api'" },
-    { name = "xgboost", specifier = ">=3.1.3" },
+    { name = "uvicorn", extras = ["standard"], marker = "extra == 'repo'" },
+    { name = "xgboost", marker = "extra == 'api'", specifier = ">=3.1.3" },
+    { name = "xgboost", marker = "extra == 'repo'", specifier = ">=3.1.3" },
 ]
-provides-extras = ["api"]
+provides-extras = ["repo", "api"]
 
 [[package]]
 name = "cycler"

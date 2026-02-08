@@ -22,7 +22,7 @@ This project uses the **Credit Card Fraud Detection Dataset** from Kaggle, origi
 ### Dataset description
 
 * The dataset contains **~285,000 credit card transactions** made by European cardholders.
-* The target variable `Class` indicates whether a transaction is fraudulent (`1`) or legitimate (`0`).
+* The target variable `Class` indicates whether a transaction is fraudulent (`1`) or legitimate (`0`). I later changed this variable's name to 'fraud'.
 * Fraudulent transactions represent **~0.17%** of the data, resulting in a highly imbalanced classification problem.
 * Features `V1`–`V28` are **PCA-transformed variables** to protect sensitive information.
 * The `Amount` feature represents the transaction amount.

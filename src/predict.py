@@ -53,5 +53,14 @@ def create_prediction(transaction: Transaction):
         threshold=threshold
     )
 
+@app.get("/")
+def root():
+    return {
+        "message": "Credit Card Fraud Detection API",
+        "FastAPI docs": "/docs",
+        "health": "/health",
+        "predict": "/predict"
+    }
+
 if __name__ == "__main__":
     uvicorn.run("predict:app", host="0.0.0.0", port=8080)

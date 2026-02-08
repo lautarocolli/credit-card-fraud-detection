@@ -4,7 +4,7 @@
 
 This project was developed as part of the **[Machine Learning Zoomcamp](https://datatalks.club/blog/machine-learning-zoomcamp.html)** by **DataTalks.Club**.
 
-I’d like to thank **Alexey Grigorev** and the entire DataTalks.Club community for creating and maintaining such a high-quality, practical program that emphasizes real-world machine learning, reproducibility, and deployment. All **for FREE**
+I’d like to thank **Alexey Grigorev** and the entire DataTalks.Club community for creating and maintaining such a high-quality, practical program that emphasizes real-world machine learning, reproducibility, and deployment. **All for FREE**
 
 The structure, best practices, and overall approach of this project were strongly influenced by the Zoomcamp’s focus on building end-to-end ML systems rather than isolated models.
 

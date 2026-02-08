@@ -2,7 +2,7 @@
 
 ## 🙏 Acknowledgments
 
-This project was developed as part of the **[Machine Learning Zoomcamp]([https://datatalks.club/blog/machine-learning-zoomcamp.html])** by **DataTalks.Club**.
+This project was developed as part of the **[Machine Learning Zoomcamp](https://datatalks.club/blog/machine-learning-zoomcamp.html)** by **DataTalks.Club**.
 
 I’d like to thank **Alexey Grigorev** and the entire DataTalks.Club community for creating and maintaining such a high-quality, practical program that emphasizes real-world machine learning, reproducibility, and deployment.
 

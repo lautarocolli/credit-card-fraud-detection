@@ -102,7 +102,7 @@ Because the dataset is highly imbalanced, models are evaluated using metrics sui
 * Recall
 * F1-score
 
-Hyperparameter tuning is applied to tree-based models to improve performance.
+Hyperparameter tuning is applied to every model in order to improve performance.
 
 ### 3. Model Deployment
 
